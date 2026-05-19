@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INSIDE THE GAME</title>
+<title>THE GAME WITHIN</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;600&display=swap');
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -102,7 +102,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);}
 <body>
 
 <div id="intro">
-  <h1>INSIDE<br>THE GAME</h1>
+  <h1>THE GAME<br>WITHIN</h1>
   <div id="intro-sub">Creative Photography — Double Exposure Portraits</div>
   <button id="intro-enter">Enter the Gallery</button>
 </div>
@@ -331,14 +331,30 @@ function openTournament(){
   document.getElementById('tournament').classList.add('show');
   document.getElementById('match-screen').style.display='flex';
   document.getElementById('winner-screen').classList.remove('show');
-  document.getElementById('bracket-btn').textContent='← Gallery';
+  const btn=document.getElementById('bracket-btn');
+  btn.textContent='← Gallery';
+  btn.style.animation='none';
+  btn.style.background='transparent';
+  btn.style.color='rgba(184,168,130,0.4)';
+  btn.style.borderColor='rgba(184,168,130,0.2)';
+  btn.style.fontSize='0.6rem';
+  btn.style.padding='0.4rem 0.9rem';
+  btn.style.letterSpacing='0.35em';
   showMatch();
 }
 
 function closeTournament(){
   tournamentOpen=false;
   document.getElementById('tournament').classList.remove('show');
-  document.getElementById('bracket-btn').textContent='Who Owns The Game?';
+  const btn=document.getElementById('bracket-btn');
+  btn.textContent='Who Owns The Game?';
+  btn.style.animation='';
+  btn.style.background='';
+  btn.style.color='';
+  btn.style.borderColor='';
+  btn.style.fontSize='';
+  btn.style.padding='';
+  btn.style.letterSpacing='';
 }
 
 function getRoundName(){
